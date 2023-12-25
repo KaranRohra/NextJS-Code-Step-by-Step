@@ -1,20 +1,23 @@
 "use client";
+import React from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { Button } from "react-bootstrap";
+import { useRouter } from "next/navigation";
 
-export default function Home() {
+function About() {
     const router = useRouter();
     return (
-        <main>
+        <div>
             <div id="Navigation">
+                <Button onClick={() => router.push("/")}> Home </Button>
                 <Button onClick={() => router.push("/login")}> Login </Button>
-                <Button onClick={() => router.push("/about")}> About </Button>
             </div>
             <div id="Linking">
+                <Link href={"/"}> Home Page </Link>
                 <Link href={"/login"}> Login Page </Link>
-                <Link href={"/about"}> About Page </Link>
             </div>
-        </main>
+        </div>
     );
 }
+
+export default About;
